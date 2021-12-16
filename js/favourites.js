@@ -24,7 +24,7 @@ favourites.forEach((favourite) => {
     productContainer.innerHTML += ` 
                                 <div class="product">
                                     <h4>${favourite.title}</h4>
-                                    <i class="fa fa-heart"></i>
+                                    <i class="fa fa-star"></i>
                                 </div>`;
 logoutButton();
                             

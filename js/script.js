@@ -36,7 +36,7 @@ const productContainer = document.querySelector (".product-container");
             <h4> ${product.title} </h4>
             <p>  ${product.summary} </p>
             <p> Author: ${product.author} </p>
-            <i class="${cssClass} fa-heart" data-id="${product.id}" data-title="${product.title}"> </div>`
+            <i class="${cssClass} fa-star" data-id="${product.id}" data-title="${product.title}"> </div>`
         });
 
 
