@@ -61,4 +61,24 @@ ul li {
 
  a {
     text-decoration: none;
+    color:#212529 ;
+}
+
+.noFav  {
+    color: white;
+} 
+
+
+#logout {
+    margin: 10px;
+    padding: 10px 20px;
+    font-family: "roboto" , sans serif;
+    background-color: #55cca2;
+    border: 5px solid #55cca2 ;
+    border-radius: 5px;
+}
+
+#logout:hover {
+    cursor: pointer;
+    color: #F1BD1F;
 }
