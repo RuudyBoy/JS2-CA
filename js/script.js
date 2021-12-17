@@ -1,5 +1,5 @@
 import { getExistingFavs } from "./utils/favFunctions.js";
-//import { searchProducts } from "./ui/searchProducts.js";
+import { searchProducts } from "./ui/searchProducts.js";
 
 
 const url ="http://localhost:8060/articles/";
@@ -7,7 +7,7 @@ const url ="http://localhost:8060/articles/";
 const articleContainer = document.querySelector (".article-container");
 
 
-   export async function getArticles() {
+    function getArticles() {
 
 	try {
         const response = await fetch(url);
