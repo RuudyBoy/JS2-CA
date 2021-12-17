@@ -1,4 +1,5 @@
 import { getExistingFavs } from "./utils/favFunctions.js";
+//import { searchProducts } from "./ui/searchProducts.js";
 
 
 const url ="http://localhost:8060/articles/";
@@ -6,7 +7,7 @@ const url ="http://localhost:8060/articles/";
 const articleContainer = document.querySelector (".article-container");
 
 
-   async function getArticles() {
+   export async function getArticles() {
 
 	try {
         const response = await fetch(url);
@@ -31,6 +32,10 @@ const articleContainer = document.querySelector (".article-container");
             if (doesObjectExist) {
                 cssClass = "fa";
             }
+            
+        
+    
+
 
             articleContainer.innerHTML += `<div class="article">
             <h4> ${article.title} </h4>
@@ -41,7 +46,6 @@ const articleContainer = document.querySelector (".article-container");
 
 
         
-
 
         const favButtons = document.querySelectorAll(".article i");
 
@@ -83,12 +87,6 @@ const articleContainer = document.querySelector (".article-container");
         function saveFavs(favs) {
             localStorage.setItem("favourites", JSON.stringify(favs));
         }
-
-
-
-
-
-      
        
     } catch (error) {
         console.log(error);
@@ -98,3 +96,6 @@ const articleContainer = document.querySelector (".article-container");
 }
 
 getArticles();
+
+
+
