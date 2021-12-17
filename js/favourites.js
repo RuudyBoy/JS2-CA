@@ -8,7 +8,7 @@ const productContainer = document.querySelector(".products-container");
 
 if (favourites.length === 0) {
     productContainer.innerHTML =  `<div class="noFav">
-    <h4> "No favorites added:("</h4>
+    <h4> No favorites added:(</h4>
     <a class="addFav-button" href="index.html"> Add Favorites here</a>
 </div>`;
 }

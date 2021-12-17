@@ -1,0 +1,64 @@
+
+body {
+    font-family: "roboto" , sans serif;
+    margin: 0px;
+    background-color: black;
+}
+
+h1 {
+    color: white;
+}
+ 
+
+h4 {
+    font-weight: 300;
+    font-size: x-large;
+}
+
+p {
+    font-size: small;
+}
+
+.search {
+    background-color:#212529 ;
+    color: white;
+    padding: 5px;
+    border:none;
+    border-radius: 5px;
+}
+
+
+.container {
+    max-width: 1000px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.product {
+    background-color:#212529 ;
+    color: #55cca2;
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow: 4px 3px #55cca2 ;
+    border-radius: 5px;
+}
+
+i {
+    color: #F1BD1F;
+}
+
+nav {
+    background-color: aquamarine;
+    max-width: 100%;
+    margin: 0px;
+    padding: 10px;
+}
+
+ul li {
+    list-style-type: none ;
+}
+
+
+ a {
+    text-decoration: none;
+}
