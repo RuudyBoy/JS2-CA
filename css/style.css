@@ -17,6 +17,7 @@ h4 {
 
 p {
     font-size: small;
+    color: white;
 }
 
 .search {
@@ -34,17 +35,18 @@ p {
     text-align: center;
 }
 
-.product {
+.article {
     background-color:#212529 ;
     color: #55cca2;
     padding: 10px;
-    margin-top: 10px;
+    margin: 10px;
     box-shadow: 4px 3px #55cca2 ;
     border-radius: 5px;
 }
 
 i {
     color: #F1BD1F;
+    cursor: pointer;
 }
 
 nav {
@@ -68,6 +70,11 @@ ul li {
     color: white;
 } 
 
+.addFav {
+    color: #55cca2;
+    text-decoration: underline;
+}
+
 
 #logout {
     margin: 10px;
@@ -80,5 +87,7 @@ ul li {
 
 #logout:hover {
     cursor: pointer;
-    color: #F1BD1F;
+    color: #55cca2;
+    background-color: #212529;
+    padding: 15px 25px;
 }

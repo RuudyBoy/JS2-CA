@@ -3,27 +3,27 @@ import { getExistingFavs } from "./utils/favFunctions.js";
 
 const url ="http://localhost:8060/articles/";
 
-const productContainer = document.querySelector (".product-container");
+const articleContainer = document.querySelector (".article-container");
 
 
-   async function getProducts() {
+   async function getArticles() {
 
 	try {
         const response = await fetch(url);
-        const products = await response.json();
+        const articles = await response.json();
 
-        console.log(products);
+        console.log(articles);
 
         const favourites = getExistingFavs();
 
-        products.forEach((product) => {
+     articles.forEach((article) => {
 
             let cssClass = "far";
 
             const doesObjectExist = favourites.find(function(fav) {
                 console.log(fav);
 
-                return parseInt (fav.id) === product.id;
+                return parseInt (fav.id) === article.id;
              });
 
             console.log(doesObjectExist);
@@ -32,18 +32,18 @@ const productContainer = document.querySelector (".product-container");
                 cssClass = "fa";
             }
 
-            productContainer.innerHTML += `<div class="product">
-            <h4> ${product.title} </h4>
-            <p>  ${product.summary} </p>
-            <p> Author: ${product.author} </p>
-            <i class="${cssClass} fa-star" data-id="${product.id}" data-title="${product.title}"> </div>`
+            articleContainer.innerHTML += `<div class="article">
+            <h4> ${article.title} </h4>
+            <p>  ${article.summary} </p>
+            <p> Author: ${article.author} </p>
+            <i class="${cssClass} fa-star" data-id="${article.id}" data-title="${article.title}"> </div>`
         });
 
 
         
 
 
-        const favButtons = document.querySelectorAll(".product i");
+        const favButtons = document.querySelectorAll(".article i");
 
         favButtons.forEach((button) => {
             button.addEventListener("click", handleClick);
@@ -61,14 +61,14 @@ const productContainer = document.querySelector (".product-container");
             const currentFavs = getExistingFavs();
             
 
-            const productExists = currentFavs.find(function(fav) {
+            const articleExists = currentFavs.find(function(fav) {
                 return fav.id === id;
             });
 
-            if (productExists === undefined) {
+            if (articleExists === undefined) {
                 
-                const product = {id: id, title: title};
-                currentFavs.push(product);
+                const article = {id: id, title: title};
+                currentFavs.push(article);
                 saveFavs(currentFavs);
             }
             else {
@@ -97,4 +97,4 @@ const productContainer = document.querySelector (".product-container");
     
 }
 
-getProducts();
+getArticles();
