@@ -1,7 +1,6 @@
 import { getExistingFavs } from "./utils/favFunctions.js";
 import logoutButton from "./common/clearButton.js";
 
-
 const favourites = getExistingFavs();
 
 const articleContainer = document.querySelector(".article-container");
@@ -13,12 +12,7 @@ if (favourites.length === 0) {
 </div>`;
 }
 
-articleContainer.innerHTML +=  
-` 
-<button id="logout"> Clear All</button>
-`;
-
-
+articleContainer.innerHTML +=  `<button id="logout"> Clear All</button>`;
 
 favourites.forEach((favourite) => {
     articleContainer.innerHTML += ` 

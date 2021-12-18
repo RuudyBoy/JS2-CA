@@ -1,51 +1,19 @@
 import { getExistingFavs } from "./utils/favFunctions.js";
-import { searchProducts } from "./ui/searchProducts.js";
+import { searchArticles } from "./ui/searchArticles.js";
+import { renderArticles } from "./ui/renderArticles.js";
+import { errorMessage } from "./ui/errorMessage.js";
 
 
 const url ="http://localhost:8060/articles/";
 
-const articleContainer = document.querySelector (".article-container");
-
-
-    function getArticles() {
+    async function getArticles() {
 
 	try {
         const response = await fetch(url);
         const articles = await response.json();
-
-        console.log(articles);
-
-        const favourites = getExistingFavs();
-
-     articles.forEach((article) => {
-
-            let cssClass = "far";
-
-            const doesObjectExist = favourites.find(function(fav) {
-                console.log(fav);
-
-                return parseInt (fav.id) === article.id;
-             });
-
-            console.log(doesObjectExist);
-
-            if (doesObjectExist) {
-                cssClass = "fa";
-            }
-            
         
-    
-
-
-            articleContainer.innerHTML += `<div class="article">
-            <h4> ${article.title} </h4>
-            <p>  ${article.summary} </p>
-            <p> Author: ${article.author} </p>
-            <i class="${cssClass} fa-star" data-id="${article.id}" data-title="${article.title}"> </div>`
-        });
-
-
-        
+        renderArticles(articles);
+        searchArticles(articles);
 
         const favButtons = document.querySelectorAll(".article i");
 
@@ -82,14 +50,13 @@ const articleContainer = document.querySelector (".article-container");
 
         }
 
-        
-
         function saveFavs(favs) {
             localStorage.setItem("favourites", JSON.stringify(favs));
         }
        
     } catch (error) {
         console.log(error);
+        errorMessage("error", error, ".article-container");
     } 
 
     
